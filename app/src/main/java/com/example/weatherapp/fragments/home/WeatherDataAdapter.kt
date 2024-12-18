@@ -1,14 +1,10 @@
 package com.example.weatherapp.fragments.home
 
-import android.content.ClipData.Item
+import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import androidx.compose.foundation.relocation.BringIntoViewRequester
-import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.currentCompositionErrors
 import androidx.recyclerview.widget.RecyclerView
-import coil3.load
+import coil.load
 import coil3.request.crossfade
 import com.example.weatherapp.data.CurrentLocation
 import com.example.weatherapp.data.CurrentWeather
@@ -129,7 +125,10 @@ class WeatherDataAdapter(
 
         fun bind(currentWeather: CurrentWeather) {
             with(binding) {
-                imageIcon.load("https:${currentWeather.icon}") { crossfade(true) }
+                Log.d("WeatherApp", "Image URL: https:${currentWeather.icon}")
+
+                imageIcon.load("https:${currentWeather.icon}") {crossfade(true)
+                }
                 textTemperature.text = String.format("%s\u00B0C",currentWeather.temperature)
                 textWind.text = String.format("%s km/h", currentWeather.wind)
                 textHumidity.text = String.format("%s%%", currentWeather.humidity)
@@ -146,7 +145,7 @@ class WeatherDataAdapter(
                 textTime.text = forecast.time
                 textTemperature.text = String.format("%s\u00B0C", forecast.temperature)
                 textFeelsLikeTemperature.text = String.format("%s\u00B0C", forecast.feelsLikeTemperature)
-                imageIcon.load("https:${forecast.icon}") {crossfade(enable = true)}
+                imageIcon.load("https:${forecast.icon}")
             }
         }
     }

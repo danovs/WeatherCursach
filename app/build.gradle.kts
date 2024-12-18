@@ -72,4 +72,5 @@ dependencies {
 
     implementation(libs.location)
     implementation(libs.swiprefresh)
+    implementation(libs.coil)
 }

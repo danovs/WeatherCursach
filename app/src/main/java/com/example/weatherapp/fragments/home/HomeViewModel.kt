@@ -2,6 +2,7 @@ package com.example.weatherapp.fragments.home
 
 import android.location.Geocoder
 import android.text.BoringLayout
+import android.util.Log
 import androidx.compose.runtime.currentCompositionErrors
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.MutableLiveData
@@ -81,6 +82,9 @@ class HomeViewModel(private val weatherDataRepository: WeatherDataRepository): V
         viewModelScope.launch {
             emitWeatherDataUiState(isLoading = true)
             weatherDataRepository.getWeatherData(latitude, longitude)?.let { weatherData ->
+                Log.d("WeatherResponse", "Icon: ${weatherData.current.condition.icon}")
+
+
                 emitWeatherDataUiState(
                     currentWeather = CurrentWeather(
                         icon = weatherData.current.condition.icon,

@@ -20,6 +20,7 @@ coil-compose = "3.0.4"
 lifecycle-viewmodel-ktx = "2.8.7"
 play-services-location = "21.0.1"
 swiperefreshlayout = "1.1.0"
+coil = "2.5.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -39,6 +40,7 @@ navigationUi = { group = "androidx.navigation", name = "navigation-ui-ktx", vers
 retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit"  }
 converterGson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "converter-gson" }
 coilCompose = { group = "io.coil-kt.coil3", name = "coil-compose", version.ref = "coil-compose" }
+coil = { module = "io.coil-kt:coil", version.ref = "coil" }
 
 koinAndroid = { module = "io.insert-koin:koin-android", version.ref = "koin" }
 koinAndroidxCompose = { module = "io.insert-koin:koin-androidx-compose", version.ref = "koin" }
