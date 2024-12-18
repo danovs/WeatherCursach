@@ -6,6 +6,7 @@ import androidx.compose.runtime.currentCompositionErrors
 import androidx.compose.runtime.currentRecomposeScope
 import com.example.weatherapp.data.CurrentLocation
 import com.example.weatherapp.data.RemoteLocation
+import com.example.weatherapp.data.RemoteWeatherData
 import com.example.weatherapp.network.api.WeatherAPI
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.Priority
@@ -56,5 +57,10 @@ class WeatherDataRepository(private val weatherAPI: WeatherAPI) {
     suspend fun searchLocation(query: String): List<RemoteLocation>? {
         val response = weatherAPI.searchLocation(query = query)
         return if (response.isSuccessful) response.body() else null
+    }
+
+    suspend fun getWeatherData(latitude: Double, longitude: Double) : RemoteWeatherData ? {
+        val response = weatherAPI.getWeatherData(query = "$latitude,$longitude")
+        return if(response.isSuccessful) response.body() else null
     }
 }
