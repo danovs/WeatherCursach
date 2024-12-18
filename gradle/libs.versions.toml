@@ -18,6 +18,8 @@ retrofit = "2.9.0"
 converter-gson = "2.5.0"
 coil-compose = "3.0.4"
 lifecycle-viewmodel-ktx = "2.8.7"
+play-services-location = "21.0.1"
+swiperefreshlayout = "1.1.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -41,6 +43,8 @@ coilCompose = { group = "io.coil-kt.coil3", name = "coil-compose", version.ref =
 koinAndroid = { module = "io.insert-koin:koin-android", version.ref = "koin" }
 koinAndroidxCompose = { module = "io.insert-koin:koin-androidx-compose", version.ref = "koin" }
 viewmodelKtx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycle-viewmodel-ktx" }
+location = { module = "com.google.android.gms:play-services-location", version.ref = "play-services-location"}
+swiprefresh = {module = "androidx.swiperefreshlayout:swiperefreshlayout", version.ref = "swiperefreshlayout"}
 
 
 

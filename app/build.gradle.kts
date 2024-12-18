@@ -69,4 +69,7 @@ dependencies {
 
     // ViewModel KTX
     implementation(libs.viewmodelKtx)
+
+    implementation(libs.location)
+    implementation(libs.swiprefresh)
 }
